@@ -2,10 +2,15 @@
 
 class Solution:
     def removeElement(self, nums: [], val: int) -> int:
+        i = 0
+
         c = len(nums)
-        for i in range(c-1, -1, -1):
+        while i < c:
             if nums[i] == val:
                 nums.remove(nums[i])
+                c -= 1
+            else:
+                i += 1
 
         return len(nums)
 

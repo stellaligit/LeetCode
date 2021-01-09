@@ -2,17 +2,16 @@
 
 class Solution:
     def removeElement(self, nums: [], val: int) -> int:
-        i = 0
+        i = -1
+        j = 0
 
-        c = len(nums)
-        while i < c:
-            if nums[i] == val:
-                nums.remove(nums[i])
-                c -= 1
-            else:
+        while j < len(nums):
+            if nums[j] != val:
                 i += 1
+                nums[i] = nums[j]
+            j += 1
 
-        return len(nums)
+        return i + 1
 
 
 if __name__ == "__main__":

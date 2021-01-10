@@ -3,13 +3,10 @@
 class Solution:
     def removeElement(self, nums: [], val: int) -> int:
         i = -1
-        j = 0
-
-        while j < len(nums):
+        for j in range(len(nums)):
             if nums[j] != val:
                 i += 1
                 nums[i] = nums[j]
-            j += 1
 
         return i + 1
 

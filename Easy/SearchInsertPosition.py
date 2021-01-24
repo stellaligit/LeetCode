@@ -2,7 +2,13 @@
 
 class Solution:
     def searchInsert(self, nums: [], target: int) -> int:
-        if target not in nums:
+        # if target not in nums:
+        flag = False
+        for i in nums:
+            if i == target:
+                flag = True
+
+        if not flag:
             for i in range(len(nums)):
                 if nums[-1] < target:
                     return len(nums)

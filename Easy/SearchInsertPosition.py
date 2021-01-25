@@ -6,10 +6,7 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] == target:
                 return i
-                flag = True
-
-        for i in range(len(nums)):
-            if nums[-1] < target:
+            elif nums[-1] < target:
                 return len(nums)
             elif nums[0] > target:
                 return 0

@@ -1,9 +1,8 @@
 # https://leetcode.com/problems/count-and-say/
 
 class Solution:
-    def countAndSay(self, t: int) -> int:
+    def countAndSay(self, s: str) -> int:
         string = ""
-        s = str(t)
         cur_ch = s[0]
         count = 1
 

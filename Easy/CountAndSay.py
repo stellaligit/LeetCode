@@ -1,7 +1,11 @@
 # https://leetcode.com/problems/count-and-say/
 
 class Solution:
-    def countAndSay(self, s: str) -> int:
+    def countAndSay(self, n: int) -> str:
+        if n == 1:
+            return "1"
+
+        s = self.countAndSay(n-1)
         string = ""
         cur_ch = s[0]
         count = 1
@@ -10,14 +14,12 @@ class Solution:
             if ch == cur_ch:
                 count += 1
             else:
-                string += str(count)
-                string += cur_ch
+                string += str(count) + cur_ch
                 cur_ch = ch
                 count = 1
 
-        string += str(count)
-        string += cur_ch
-        return int(string)
+        string += str(count) + cur_ch
+        return string
 
 
 if __name__ == "__main__":

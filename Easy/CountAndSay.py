@@ -5,21 +5,26 @@ class Solution:
         if n == 1:
             return "1"
 
-        s = self.countAndSay(n-1)
-        string = ""
-        cur_ch = s[0]
-        count = 1
+        ans = ["1"]
+        for i in range(n):
+            # s = self.countAndSay(n-1)
+            s = ans[i]
+            string = ""
+            cur_ch = s[0]
+            count = 1
 
-        for ch in s[1:]:
-            if ch == cur_ch:
-                count += 1
-            else:
-                string += str(count) + cur_ch
-                cur_ch = ch
-                count = 1
+            for ch in s[1:]:
+                if ch == cur_ch:
+                    count += 1
+                else:
+                    string += str(count) + cur_ch
+                    cur_ch = ch
+                    count = 1
 
-        string += str(count) + cur_ch
-        return string
+            string += str(count) + cur_ch
+            ans.append(string)
+
+        return ans[n-1]
 
 
 if __name__ == "__main__":

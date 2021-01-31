@@ -5,10 +5,8 @@ class Solution:
         if n == 1:
             return "1"
 
-        ans = ["1"]
-        for i in range(n):
-            # s = self.countAndSay(n-1)
-            s = ans[i]
+        s = "1"
+        for i in range(n-1):
             string = ""
             cur_ch = s[0]
             count = 1
@@ -22,9 +20,9 @@ class Solution:
                     count = 1
 
             string += str(count) + cur_ch
-            ans.append(string)
+            s = string
 
-        return ans[n-1]
+        return s
 
 
 if __name__ == "__main__":

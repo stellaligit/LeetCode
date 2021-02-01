@@ -1,28 +1,13 @@
 # https://leetcode.com/problems/count-and-say/
 
 class Solution:
-    def countAndSay(self, n: int) -> str:
+     def countAndSay(self, n: int) -> str:
         if n == 1:
             return "1"
 
-        s = "1"
-        for i in range(n-1):
-            string = ""
-            cur_ch = s[0]
-            count = 1
-
-            for ch in s[1:]:
-                if ch == cur_ch:
-                    count += 1
-                else:
-                    string += str(count) + cur_ch
-                    cur_ch = ch
-                    count = 1
-
-            string += str(count) + cur_ch
-            s = string
-
-        return s
+        s = self.countAndSay(n-1)
+        t = self.say(s)
+        return str(t)
 
 
 if __name__ == "__main__":
